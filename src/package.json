@@ -1,0 +1,29 @@
+{
+  "name": "twitter",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --es-module-specifier-resolution=node ./index.js",
+    "debug": "DEBUG=express:* node --es-module-specifier-resolution=node ./bin/www.js"
+  },
+  "engines": {
+    "node": "16.6.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "crypto": "^1.0.1",
+    "debug": "^4.3.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "http-errors": "^1.8.0",
+    "morgan": "^1.10.0",
+    "oauth-1.0a": "^2.2.6",
+    "query-string": "^7.0.1",
+    "serve-favicon": "^2.5.0"
+  }
+}

@@ -1,0 +1,23 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          appdir: "src"
+          buildpack: "heroku/nodejs"
+        env:
+          HD_CONSUMER_KEY: ${{secrets.CONSUMER_KEY}}
+          HD_CONSUMER_SECRET: ${{secrets.CONSUMER_SECRET}}
+          HD_BEARER_TOKEN: ${{secrets.BEARER_TOKEN}}

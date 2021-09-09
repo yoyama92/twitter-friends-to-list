@@ -1,0 +1,12 @@
+{
+	"dockerComposeFile": [
+		"./docker-compose.yml",
+	],
+	"service": "app",
+	"workspaceFolder": "/home/node/src",
+	"extensions": [
+		"esbenp.prettier-vscode",
+		"visualstudioexptteam.vscodeintellicode",
+		"xabikos.javascriptsnippets"
+	],
+}

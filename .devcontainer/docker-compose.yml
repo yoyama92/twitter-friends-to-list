@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    image: node_twitter_dev
+    container_name: twitter
+    user: node
+    working_dir: /home/node/src
+    ports:
+      - 3000:3000
+    volumes:
+      - ../src/:/home/node/src
+    env_file:
+      - twitter.env
+    tty: true
