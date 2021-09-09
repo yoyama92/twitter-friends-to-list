@@ -173,14 +173,13 @@ export class Lists {
 
   /**
    * リストを作成する。
-   * @param {*} name
    * @param {*} mode
    * @param {*} description
    * @returns
    */
-  async create(name, mode, description) {
+  async create(mode, description) {
     const url = new URL("https://api.twitter.com/1.1/lists/create.json");
-    url.searchParams.append("name", name);
+    url.searchParams.append("name", "TL再現リスト");
     url.searchParams.append("mode", mode);
     url.searchParams.append("description", description);
 

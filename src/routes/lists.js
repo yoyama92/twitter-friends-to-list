@@ -47,7 +47,7 @@ router.get("/callback", function (req, res, next) {
       accessTokenSecret: value["oauth_token_secret"],
     });
 
-    const listId = await lists.create(user.name, "private", user.name);
+    const listId = await lists.create("private", user.screen_name);
 
     // TLを再現するためにフォロー取得元のユーザーをリストに追加する。
     await lists.addMembers(listId, [user.id_str]);
