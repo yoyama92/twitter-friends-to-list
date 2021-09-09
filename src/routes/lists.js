@@ -16,6 +16,7 @@ router.get("/callback", function (req, res, next) {
     const screenName = req.session["user_id"];
 
     if (!(oauthVerifier && oauthToken && screenName)) {
+      req.session["user_id"] = null;
       res.redirect("/");
       return;
     }
@@ -24,6 +25,7 @@ router.get("/callback", function (req, res, next) {
     const user = await users.show(screenName);
 
     if (!user) {
+      req.session["user_id"] = null;
       res.redirect("/");
       return;
     }
